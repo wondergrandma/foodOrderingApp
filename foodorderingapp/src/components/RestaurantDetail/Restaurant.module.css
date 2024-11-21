@@ -1,0 +1,28 @@
+.restaurant {
+    text-align: left;
+    max-width: 350px;
+    background-color: #FA812F;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    padding: 10px; 
+}
+
+.line {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 10px 0; 
+}
+
+.cuisineRow {
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.about{
+    font-size: 13px;
+}
