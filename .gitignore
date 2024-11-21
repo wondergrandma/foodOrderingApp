@@ -50,4 +50,5 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,react
+# Node modules
+node_modules/
