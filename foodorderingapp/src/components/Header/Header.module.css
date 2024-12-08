@@ -3,15 +3,16 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    width: 100.5%;
+    width: 100%;
 }
 
 .header{
     height: 50px;
-    width: 95%;
-    margin-right: 30px;
+    width: 100%;
+    padding: 5px 20px;
+    margin-right: 10px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color: #FA812F;
     border: 2px solid rgba(0, 0, 0, 0.5);
@@ -25,7 +26,8 @@
 
 .search{
     height: 30px;
-    width: 170px;
+    width: 230px;
+    padding: 0 10px;
     background-color: #FEF3E3;
 }
 
@@ -33,16 +35,23 @@
     width: 25px;
     height: 25px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .burgerMenu{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #FA812F;
     border: 2px solid rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.burgerMenu:hover {
+    background-color: #e45b06;
 }
 
 .title{
@@ -55,6 +64,7 @@
 .titleText {
     font-size: 35px;
     margin: 0;
+    cursor: pointer;
 }
 
 .unselectable {
