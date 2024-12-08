@@ -14,7 +14,8 @@
 
 /* Ensure the entire viewport is utilized */
 html, body {
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -30,7 +31,6 @@ main {
   font-family: 'Geist Mono', monospace;
   line-height: 1.5;
   font-weight: 400;
-  margin: 10px;
 
   background-color: #FEF3E3;
 

@@ -1,3 +1,7 @@
+.restaurantTileContainer {
+    margin: 20px;
+}
+
 .restaurantContainer{
     display: flex;
     overflow-x: auto;

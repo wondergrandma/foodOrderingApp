@@ -10,7 +10,7 @@ function RestaurantTile() {
   };
 
   return (
-    <>
+    <div className={styles.restaurantTileContainer}>
       <div>
         <h1 className={styles.top}>Top</h1>
       </div>
@@ -33,7 +33,7 @@ function RestaurantTile() {
           <div className={styles.restaurant}>{restaurant.name}</div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
