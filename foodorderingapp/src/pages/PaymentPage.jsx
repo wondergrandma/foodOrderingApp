@@ -2,23 +2,77 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import styles from "./PaymentPage.module.css";
 import FoodTile from "../components/FoodTile/FoodTile";
-import OrderSumUp from "../components/OrderSumUp/OrderSumUp";
-import DeliveryDetail from "../components/DeliveryDetails/DeliveryDetail";
+import FoodList from "../components/FoodList/FoodList";
 import { CartContext } from "../storage/CartProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 function PaymentPage() {
-  const { cart } = useContext(CartContext);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const [deliveryTime, setDeliveryTime] = useState("");
+  const [isAsap, setIsAsap] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
+
+  const handleDeliveryTimeChange = (e) => {
+    setDeliveryTime(e.target.value);
+    setIsAsap(false);
+  };
+
+  const handleAsapToggle = () => {
+    setIsAsap((prevIsAsap) => !prevIsAsap);
+    if (isAsap) {
+      setDeliveryTime("");
+    }
+  };
+
+  const handlePay = () => {
+    setShowThanks(true);
+
+    setTimeout(() => {
+      setShowThanks(false);
+    }, 3000);
+  };
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className={styles.paymentPageContainer}>
-        <DeliveryDetail></DeliveryDetail>
-        <FoodTile menu={cart}></FoodTile>
-        <OrderSumUp></OrderSumUp>
+        <div>
+          <h2 className={styles.deliveryAddress}>Delivery Address</h2>
+          <p>123 Mock Street, Mocksville, MO 12345</p>
+          <h3>Delivery Time</h3>
+          <div>
+            <input
+              type="datetime-local"
+              value={deliveryTime}
+              onChange={handleDeliveryTimeChange}
+              disabled={isAsap}
+            />
+            <button className={styles.asapButton} onClick={handleAsapToggle}>
+              {isAsap ? "ASAP Selected" : "Set to ASAP"}
+            </button>
+          </div>
+        </div>
+
+        <FoodTile
+          menu={cart}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+
+        <div>
+            <FoodList />
+          <div>
+            <button className={styles.payButton} onClick={handlePay}>
+              Pay
+            </button>
+            {showThanks && (
+              <div className={styles.thankYouDialog}>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

@@ -1,8 +1,39 @@
 .paymentPageContainer {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 10px; 
-  }
-  
+  display: flex;
+  flex-direction: row; 
+  align-items: baseline; 
+  justify-content: space-between; 
+  gap: 10px; 
+  margin: 20px;
+}
+
+.deliveryAddress {
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.payButton, .asapButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F06406;
+  margin-top: 20px;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payButton {
+  position: fixed;
+  bottom: 100px;
+}
+
+.payButton:hover, .asapButton:hover {
+  background-color: #e45b06;
+}
