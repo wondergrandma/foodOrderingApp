@@ -4,11 +4,8 @@
     width: 35px;
     background-color: transparent;
     border: none;
-}
-
-.button:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    transition-duration: 150ms;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .buttonLine{
