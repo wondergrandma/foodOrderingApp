@@ -45,6 +45,8 @@
     text-overflow: ellipsis;
     white-space: normal;
     text-align: left;
+
+    cursor: pointer;
 }
 
 .top{
