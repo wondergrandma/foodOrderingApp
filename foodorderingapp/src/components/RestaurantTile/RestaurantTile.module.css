@@ -35,6 +35,16 @@
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.5);
     flex-shrink: 0;
+
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: left;
 }
 
 .top{
