@@ -31,8 +31,9 @@
   
   .saveButton, .editButton {
     padding: 10px 20px;
+    font-size: 14px;
     background-color: #f06406;
-    color: white;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
