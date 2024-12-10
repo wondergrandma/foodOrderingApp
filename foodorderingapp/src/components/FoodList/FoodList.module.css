@@ -18,7 +18,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 10px;
-    min-width: 300px;
+    min-width: none;
 
     scrollbar-width: thin;
     scrollbar-color: transparent;

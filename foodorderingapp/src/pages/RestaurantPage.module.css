@@ -1,6 +1,33 @@
 .restaurantPageContainer {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
     margin: 20px;
-}
+  }
+  
+  .foodListSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 300px;
+  }
+  
+  .payButton {
+    position: fixed;
+    bottom: 80px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f06406;
+    border: none;
+    align-self: stretch;
+    cursor: pointer;
+  }
+  
+  .payButton:hover {
+    background-color: #e45b06;
+  }
+  
