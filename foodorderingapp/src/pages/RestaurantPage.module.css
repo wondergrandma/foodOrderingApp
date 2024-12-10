@@ -7,6 +7,26 @@
     margin: 20px;
   }
   
+  .backArrowContainer {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+  }
+  
+  .backArrow {
+    background: none;
+    border: none;
+    color: #f06406;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .backArrow:hover {
+    color: #e45b06;
+  }
+  
   .foodListSection {
     display: flex;
     flex-direction: column;

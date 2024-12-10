@@ -19,6 +19,10 @@ function RestaurantPage() {
     return <div>Restaurant not found</div>;
   }
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
   const handlePayRedirect = () => {
     navigate("/payment");
   };
@@ -27,6 +31,11 @@ function RestaurantPage() {
     <>
       <Header />
       <div className={styles.restaurantPageContainer}>
+        <div className={styles.backArrowContainer}>
+          <button className={styles.backArrow} onClick={handleBack}>
+            &#8592; Back
+          </button>
+        </div>
         <div className={styles.foodListSection}>
           <FoodList />
           <button className={`${styles.payButton}`} onClick={handlePayRedirect}>
