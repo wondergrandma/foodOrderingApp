@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import DeliveryDetail from "../components/DeliveryDetails/DeliveryDetail";
 import styles from "./PaymentPage.module.css";
 import FoodTile from "../components/FoodTile/FoodTile";
 import FoodList from "../components/FoodList/FoodList";
@@ -8,6 +9,7 @@ import { useContext, useState } from "react";
 
 function PaymentPage() {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const [deliveryAddress, setDeliveryAddress] = useState(null);
   const [deliveryTime, setDeliveryTime] = useState("");
   const [isAsap, setIsAsap] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
@@ -25,8 +27,11 @@ function PaymentPage() {
   };
 
   const handlePay = () => {
+    if (!deliveryAddress) {
+      alert("Please save your delivery address first!");
+      return;
+    }
     setShowThanks(true);
-
     setTimeout(() => {
       setShowThanks(false);
     }, 3000);
@@ -37,8 +42,7 @@ function PaymentPage() {
       <Header />
       <div className={styles.paymentPageContainer}>
         <div>
-          <h2 className={styles.deliveryAddress}>Delivery Address</h2>
-          <p>123 Mock Street, Mocksville, MO 12345</p>
+          <DeliveryDetail onAddressSave={setDeliveryAddress} />
           <h3>Delivery Time</h3>
           <div>
             <input
@@ -60,13 +64,14 @@ function PaymentPage() {
         />
 
         <div>
-            <FoodList />
+          <FoodList />
           <div>
             <button className={styles.payButton} onClick={handlePay}>
               Pay
             </button>
             {showThanks && (
               <div className={styles.thankYouDialog}>
+                Thank you for your order!
               </div>
             )}
           </div>
