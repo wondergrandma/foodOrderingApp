@@ -1,11 +1,32 @@
 .foodTileContainer {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 600px; 
+    height: 85vh; 
     overflow-y: auto;
-    scrollbar-width: none;
+    overflow-x: hidden;
+    padding-right: 10px;
+
+    scrollbar-width: thin;
+    scrollbar-color: transparent;
+}
+
+
+.foodTileContainer::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.foodTileContainer::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.foodTileMenu {
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    font-weight: bold;
+    align-self: flex-start;
 }
 
 .foodTile {
@@ -19,6 +40,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .foodNamePrice{
