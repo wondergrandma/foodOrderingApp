@@ -256,7 +256,7 @@ const restaurants = [
     name: "Spicy Thai",
     cuisine: "Thai",
     location: "Bangkok, Thailand",
-    rating: 4.7,
+    rating: 4.1,
     menu: [
       { name: "Pad Thai", price: 14.99 },
       { name: "Green Curry", price: 16.99 },
@@ -312,7 +312,7 @@ const restaurants = [
     name: "Mediterranean Oasis",
     cuisine: "Mediterranean",
     location: "Athens, Greece",
-    rating: 4.8,
+    rating: 3.1,
     menu: [
       { name: "Mixed Meze Platter", price: 24.99 },
       { name: "Moussaka", price: 18.99 },
@@ -340,7 +340,7 @@ const restaurants = [
     name: "Seoul Kitchen",
     cuisine: "Korean",
     location: "Seoul, South Korea",
-    rating: 4.7,
+    rating: 3.5,
     menu: [
       { name: "Bibimbap", price: 16.99 },
       { name: "Korean BBQ Set", price: 32.99 },
@@ -424,7 +424,7 @@ const restaurants = [
     name: "Vietnam House",
     cuisine: "Vietnamese",
     location: "Ho Chi Minh City, Vietnam",
-    rating: 4.6,
+    rating: 4.4,
     menu: [
       { name: "Pho Bo", price: 12.99 },
       { name: "Banh Mi", price: 8.99 },
@@ -480,7 +480,7 @@ const restaurants = [
     name: "Nordic Kitchen",
     cuisine: "Scandinavian",
     location: "Copenhagen, Denmark",
-    rating: 4.8,
+    rating: 2.1,
     menu: [
       { name: "Smørrebrød Selection", price: 18.99 },
       { name: "Gravlax", price: 16.99 },
@@ -676,7 +676,7 @@ const restaurants = [
     name: "Malaysian Street Food",
     cuisine: "Malaysian",
     location: "Kuala Lumpur, Malaysia",
-    rating: 4.6,
+    rating: 1.0,
     menu: [
       { name: "Nasi Lemak", price: 11.99 },
       { name: "Char Kway Teow", price: 12.99 },

@@ -77,7 +77,6 @@ function PaymentPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

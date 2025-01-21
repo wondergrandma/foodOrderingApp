@@ -9,13 +9,21 @@ function RestaurantTile() {
     navigate(`/restaurant/${id}`);
   };
 
+  function filterHighRatedRestaurants(restaurants) {
+    return restaurants.filter((restaurant) => restaurant.rating > 4.5);
+  }
+
+  function filterRestaurantsExcludingTopRestaurants(restaurants) {
+    return restaurants.filter((restaurant) => restaurant.rating <= 4.5);
+  }
+
   return (
     <div className={styles.restaurantTileContainer}>
       <div>
         <h1 className={styles.top}>Top</h1>
       </div>
       <div className={styles.restaurantContainer}>
-        {restaurants.map((restaurant) => (
+        {filterHighRatedRestaurants(restaurants).map((restaurant) => (
           <div
             key={restaurant.id}
             onClick={() => goToRestaurant(restaurant.id)}
@@ -29,9 +37,11 @@ function RestaurantTile() {
         <h1 className={styles.top}>Restaurants</h1>
       </div>
       <div className={styles.restaurantContainer}>
-        {restaurants.map((restaurant) => (
-          <div className={styles.restaurant}>{restaurant.name}</div>
-        ))}
+        {filterRestaurantsExcludingTopRestaurants(restaurants).map(
+          (restaurant) => (
+            <div className={styles.restaurant}>{restaurant.name}</div>
+          )
+        )}
       </div>
     </div>
   );

@@ -45,7 +45,6 @@ function RestaurantPage() {
         <FoodTile menu={restaurant.menu} />
         <RestaurantDetail restaurant={restaurant} />
       </div>
-      <Footer />
     </>
   );
 }

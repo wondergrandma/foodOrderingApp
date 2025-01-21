@@ -9,7 +9,6 @@ function HomePage() {
       <div style={{ height: "25px" }}></div>
       <RestaurantTile></RestaurantTile>
       <div style={{ height: "140px" }}></div>
-      <Footer></Footer>
     </>
   );
 }

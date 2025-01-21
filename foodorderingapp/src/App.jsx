@@ -4,6 +4,7 @@ import PaymentPage from "./pages/PaymentPage";
 import RestaurantPage from "./pages/RestaurantPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./storage/CartProvider";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               element={<PaymentPage></PaymentPage>}
             ></Route>
           </Routes>
+          <Footer></Footer>
         </Router>
       </CartProvider>
     </>

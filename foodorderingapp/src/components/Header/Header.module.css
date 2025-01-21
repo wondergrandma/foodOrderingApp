@@ -1,22 +1,35 @@
+.header ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
 .headerContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
 }
 
+.menuItemsStyle{
+    font-size: 19px;
+    cursor: pointer;   
+}
+
+.menuItemsStyle:hover{
+    color: #FEF3E3;
+}
+
+
 .header{
-    height: 50px;
+    height: 60px;
     width: 100%;
     padding: 5px 20px;
-    margin-right: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FA812F;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    background-color: #FA812F; 
 }
+
+
 
 .searchContainer{
     display: flex;
@@ -56,9 +69,9 @@
 
 .title{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    flex-shrink: 0;
+    width: 220px;
 }
 
 .titleText {

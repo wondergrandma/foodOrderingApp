@@ -13,17 +13,27 @@
 }
 
 /* Ensure the entire viewport is utilized */
-html, body {
-  width: 100vw;
-  height: 100vh;
+html {
+  width: 100%;
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 95%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* Main content should stretch to fill the remaining space */
 main {
   flex: 1;
+  width: 100%;
 }
 
 

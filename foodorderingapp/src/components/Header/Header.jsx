@@ -7,22 +7,34 @@ import { CartContext } from "../../storage/CartProvider";
 import { useContext } from "react";
 
 function Header() {
+  const { cart } = useContext(CartContext);
   const navigate = useNavigate();
+
   const redirectToHomepage = () => {
     navigate("/");
   };
-  const { cart } = useContext(CartContext);
+
+  const redirectToPaymant = () => {
+    navigate("/payment");
+  };
+
+  const getTotalOrders = () => {
+    return cart.reduce((total, item) => total + item.quantity, null);
+  };
 
   return (
     <div className={styles.headerContainer}>
       <div className={styles.header}>
         <div className={styles.title}>
-          <p
-            className={`${styles.titleText} ${styles.unselectable}`}
-            onClick={redirectToHomepage}
-          >
-            Foodie
-          </p>
+          <div>
+            <p
+              className={`${styles.titleText} ${styles.unselectable}`}
+              onClick={redirectToHomepage}
+            >
+              Foodie
+            </p>
+          </div>
+          <Location></Location>
         </div>
         <div className={styles.centerContainer}>
           <div className={styles.searchContainer}>
@@ -39,14 +51,23 @@ function Header() {
           </div>
         </div>
         <div>
-          <Location></Location>
+          <ul>
+            <li>
+              <div
+                className={styles.menuItemsStyle}
+                onClick={redirectToPaymant}
+              >
+                {getTotalOrders()} Cart
+              </div>
+            </li>
+            <li>
+              <div className={styles.menuItemsStyle}>Search</div>
+            </li>
+            <li>
+              <div className={styles.menuItemsStyle}>Menu</div>
+            </li>
+          </ul>
         </div>
-        <div>
-          <ShoppingCart></ShoppingCart>
-        </div>
-      </div>
-      <div className={styles.burgerMenu}>
-        <BurgerMenu></BurgerMenu>
       </div>
     </div>
   );

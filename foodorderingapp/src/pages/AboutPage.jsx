@@ -20,7 +20,6 @@ function About() {
         </p>
         <p>Thank you for choosing Foodie!</p>
       </div>
-      <Footer />
     </>
   );
 }
