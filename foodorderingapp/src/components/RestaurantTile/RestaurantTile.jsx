@@ -17,6 +17,10 @@ function RestaurantTile() {
     return restaurants.filter((restaurant) => restaurant.rating <= 4.5);
   }
 
+  const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
   return (
     <div className={styles.restaurantTileContainer}>
       <div>
@@ -39,7 +43,23 @@ function RestaurantTile() {
       <div className={styles.restaurantContainer}>
         {filterRestaurantsExcludingTopRestaurants(restaurants).map(
           (restaurant) => (
-            <div className={styles.restaurant}>{restaurant.name}</div>
+            <div
+              key={restaurant.id}
+              onClick={() => goToRestaurant(restaurant.id)}
+              className={styles.restaurant}
+              style={{
+                backgroundImage: `url(/restaurant_pictures/${getRandomNumber(
+                  1,
+                  14
+                )}.avif)`,
+                objectFit: `cover`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+              }}
+            >
+              <div>{restaurant.name}</div>
+              <div className={styles.restaurantInfo}></div>
+            </div>
           )
         )}
       </div>
