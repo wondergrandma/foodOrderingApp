@@ -1,72 +1,113 @@
-.restaurantTileContainer {
-    margin: 20px;
-}
-
-/* .restaurantContainer{
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 20px;
-    padding-bottom: 5px;
-
-    scrollbar-width: thin;
-    scrollbar-color: #feb381 #FEF3E3;
-} */
-
-
 .restaurantContainer {
-    display: grid; 
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px; 
-}
-  
-.restaurant {
-    height: 300px;
-    width: 500px;
-    /*background-color: white;*/
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    gap: 20px;
+  }
 
+  .restaurant {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    background-size: fill;
+    background-position: center;
+  }
+  
+  .restaurant .backGround {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: end;
+  }
+
+  .restaurantInfo{
+    width: 100%;
+    height: 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    padding: 0px;
-    text-align: center;
+    background-color: #FA812F;
+  }
 
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-
-    cursor: pointer;
-}
-
-
-.restaurantInfo{
-    height: 55px;
-    width: 100%;
-    background: linear-gradient(transparent,rgb(60, 60, 60));
-}
-
-/* .restaurant{
-    height: 170px;
-    width: 170px;
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
-
+ .nameCuisineRatingContainer{
+    padding-left: 15px;
     display: flex;
-    padding: 10px;
-    text-align: center;
-    position: relative;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+ }
 
-    cursor: pointer;
-} */
+ .nameCuisineContainer{
+    display: flex;
+    flex-direction: column;
+ }
 
-.top{
-    font-weight: bold;
+ .estimatDelivery{
+  background-color: #e5d9c5;
+  margin-top: 11px;
+  margin-right: 15px;
+  width: 3.8rem;
+  height: 3.8rem;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;  
+
+  text-align: center; 
+ }
+
+ .restaurantName{
+  font-size: 25px;
+  font-weight: 600;
+ }
+
+ .restaurant.bars::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0),
+    rgba(0, 0, 0) 10px,
+    rgba(0, 0, 0, 0.5) 10px,
+    rgba(0, 0, 0, 0.5) 20px
+  );
+  color: #FA812F; 
+  font-size: 1.5rem; 
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  background-blend-mode: normal;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e5d9c5;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.cuisineRating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star{
+  padding-bottom: 6px;
+  font-size: 30px;
 }
