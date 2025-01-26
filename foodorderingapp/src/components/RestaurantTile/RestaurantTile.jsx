@@ -1,12 +1,17 @@
 import styles from "./RestaurantTile.module.css";
 import restaurants from "../../data/restaurants";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../authentication/AuthProvider";
 
 function RestaurantTile() {
   const navigate = useNavigate();
-  const isPrisonMode = true;
+  const { isLoggedIn } = useAuth();
 
   const goToRestaurant = (id) => {
+    if (!isLoggedIn) {
+      alert("You need to log in first!");
+      return;
+    }
     navigate(`/restaurant/${id}`);
   };
 
