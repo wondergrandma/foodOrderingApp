@@ -9,8 +9,12 @@ function SearchBar({ onSearch, onSearchClick }) {
     const searchTerm = e.target.value.toLowerCase();
     setInput(searchTerm);
 
-    const filtered = restaurants.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(searchTerm)
+    const filtered = restaurants.filter(
+      (restaurant) =>
+        restaurant.name.toLowerCase().includes(searchTerm) ||
+        restaurant.menu.some((item) =>
+          item.name.toLowerCase().includes(searchTerm)
+        )
     );
 
     if (onSearch) {
@@ -26,7 +30,7 @@ function SearchBar({ onSearch, onSearchClick }) {
         alt="Search Icon"
       ></img>
       <input
-        placeholder="Search for restaurant..."
+        placeholder="Search for restaurant or food..."
         value={input}
         onChange={(e) => handleSearch(e)}
         onClick={onSearchClick}
