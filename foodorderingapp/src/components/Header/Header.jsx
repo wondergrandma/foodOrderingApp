@@ -16,6 +16,10 @@ function Header({ onSearch }) {
     navigate("/");
   };
 
+  const goToRestaurant = (id) => {
+    navigate(`/restaurant/${id}`);
+  };
+
   const redirectToPaymant = () => {
     navigate("/payment");
   };
@@ -34,6 +38,11 @@ function Header({ onSearch }) {
   const handleSearchClick = () => {
     setIsSearchExpanded((prev) => !prev);
   };
+
+  function getLowestPrice(restaurant) {
+    const lowestPrice = Math.min(...restaurant.menu.map((item) => item.price));
+    return lowestPrice;
+  }
 
   return (
     <div
@@ -58,12 +67,26 @@ function Header({ onSearch }) {
           onSearchClick={handleSearchClick}
         />
         {isSearchExpanded && filteredRestaurants.length > 0 && (
-          <div className={styles.restaurantList}>
-            <ul>
+          <div className={styles.restaurantListWrapper}>
+            <div className={styles.restaurantList}>
               {filteredRestaurants.map((restaurant, index) => (
-                <li key={index}>{restaurant.name}</li>
+                <div key={index} className={styles.restaurantItem}>
+                  <div
+                    className={styles.concreteRestaurantTile}
+                    onClick={() => goToRestaurant(restaurant.id)}
+                  >
+                    <div className={styles.row}>
+                      <div>{restaurant.name}</div>|
+                      <div className={styles.row}>
+                        <div>{restaurant.rating} </div>
+                        <div className={styles.star}>&#9733;</div>
+                      </div>
+                    </div>
+                    <div>Food from: {getLowestPrice(restaurant)} kč</div>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>

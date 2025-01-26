@@ -81,7 +81,7 @@ function RestaurantTile() {
               <div className={styles.restaurantName}>{restaurant.name}</div>
               <div className={styles.cuisineRating}>
                 <div>{restaurant.cuisine + " | " + restaurant.rating}</div>
-                <div className={styles.star}>&#9734;</div>
+                <div className={styles.star}>&#9733;</div>
               </div>
             </div>
             <div>{buildEstimateDelivery(restaurant)}</div>

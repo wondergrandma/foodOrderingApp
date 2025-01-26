@@ -15,7 +15,6 @@ function SearchBar({ onSearch, onSearchClick }) {
 
     if (onSearch) {
       onSearch(filtered);
-      console.log("Search ide");
     }
   };
 

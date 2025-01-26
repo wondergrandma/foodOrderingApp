@@ -5,7 +5,6 @@
     width: 96%;
     height: 110px;
     padding-top: 25px;
-    padding-inline: 15px;
     z-index: 1000;
     display: flex;
     flex-direction: row;
@@ -30,11 +29,13 @@
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    padding-left: 30px;
 }
 
 .menuItems{
     display: flex;
     flex-direction: row;
+    padding-right: 30px;
 }
 
 .headerContainer{
@@ -76,30 +77,53 @@
     align-items: center;
 }
 
-
-.restaurantList {
+.restaurantListWrapper {
+    max-height: 350px; 
+    overflow-y: auto; 
     margin-top: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-height: 200px;
-    overflow-y: auto;
+    padding: 8px; 
   }
   
-  .restaurantList ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .restaurantList {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px; 
   }
   
-  .restaurantList li {
-    padding: 8px 0;
-    font-size: 16px;
+  .restaurantItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .concreteRestaurantTile {
+    background-color: #FEF3E3; 
+    padding-left: 13px;
+    padding-right: 13px;
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 650px;
+    height: 90px;
+    justify-content: space-between;
     cursor: pointer;
   }
-  
-  .restaurantList li:hover {
-    background-color: #f0f0f0;
+
+
+.restaurantListWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.star{
+    padding-bottom: 6px;
+    font-size: 30px;
+    color: #FA812F;
   }
-  
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
