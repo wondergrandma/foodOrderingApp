@@ -5,7 +5,6 @@ import RestaurantDetail from "../components/RestaurantDetail/RestaurantDetail";
 import FoodTile from "../components/FoodTile/FoodTile";
 import styles from "./RestaurantPage.module.css";
 import FoodList from "../components/FoodList/FoodList";
-import Footer from "../components/Footer/Footer";
 
 function RestaurantPage() {
   const { id } = useParams();

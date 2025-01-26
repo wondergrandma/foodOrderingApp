@@ -1,0 +1,28 @@
+.inputContainer{
+    background-color: #FEF3E3;
+    width: 23%;
+    height: 2.5rem;
+    padding: 0 15px;
+    margin-top: 10px;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+}
+
+input:focus{
+    outline: none;
+}
+
+.searchIcon{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <>
       <Header></Header>
-      <div style={{ height: "25px" }}></div>
+      <div style={{ height: "120px" }}></div>
       <RestaurantTile></RestaurantTile>
       <div style={{ height: "140px" }}></div>
     </>

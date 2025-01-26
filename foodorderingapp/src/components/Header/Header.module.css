@@ -1,7 +1,40 @@
-.header ul{
+.headerRow{
+    background-color: #FA812F;
+    position: fixed;
+    justify-content: center;
+    width: 96%;
+    height: 110px;
+    padding-top: 25px;
+    padding-inline: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: height 0.3s ease;
+    --mask: conic-gradient(from -30deg at bottom,#0000,#000 1deg 59deg,#0000 60deg) 50%/2.31rem 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+
+.headerRow.expanded {
+    height: 500px; 
+  }
+
+.menuItems ul{
     list-style: none;
     display: flex;
     gap: 2rem;
+}
+
+.titleLocation{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: row;
 }
 
 .headerContainer{
@@ -18,63 +51,9 @@
     color: #FEF3E3;
 }
 
-
-.header{
-    --mask: conic-gradient(from -30deg at bottom,#0000,#000 1deg 59deg,#0000 60deg) 50%/2.31rem 100%;
-    -webkit-mask: var(--mask);
-            mask: var(--mask);
-    height: 110px;
-    width: 100%;
-    padding: 5px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FA812F; 
-}
-
-
-
-.searchContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .search{
-    height: 30px;
-    width: 230px;
-    padding: 0 10px;
-    background-color: #FEF3E3;
-}
-
-.searchIcon{
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.burgerMenu{
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FA812F;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.burgerMenu:hover {
-    background-color: #e45b06;
-}
-
-.title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 220px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .titleText {
@@ -88,5 +67,39 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+  }
+
+.searchColumn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.restaurantList {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .restaurantList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .restaurantList li {
+    padding: 8px 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .restaurantList li:hover {
+    background-color: #f0f0f0;
   }
   
