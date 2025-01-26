@@ -44,3 +44,22 @@
     background-color: #e45b06;
   }
   
+  .actionButton {
+    background-color: #f06406;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+  }
+  
+  .actionButton:hover {
+    background-color: #e45b06;
+  }
