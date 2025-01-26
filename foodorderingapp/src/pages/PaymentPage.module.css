@@ -1,40 +1,198 @@
 .paymentPageContainer {
   display: flex;
-  flex-direction: row; 
-  align-items: baseline; 
-  justify-content: space-between; 
-  gap: 10px; 
-  margin: 20px;
-}
-
-.deliveryAddress {
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  font-weight: bold;
-  align-self: flex-start;
-}
-
-.payButton, .asapButton {
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #F06406;
-  margin-top: 20px;
-  color: black;
+  padding: 200px;
+  min-height: 100vh;
+}
+
+.stepNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+
+.navigationButton {
+    background: none;
+    border: none;
+    color: #f06406;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navigationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navigationButton:hover:enabled {
+  color: #e45b06;
+}
+
+.stepIndicator {
+  display: flex;
+  gap: 10px;
+}
+
+.stepDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fdf6e3;
+  transition: background-color 0.3s ease;
+}
+
+.activeStep {
+  background-color: #f06406;
+}
+
+.stepTitle {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.deliveryTimeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.deliveryTimeInput {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.asapButton {
+  background-color: #f06406;
+  color: #fff;
   border: none;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.payButton {
-  position: fixed;
-  bottom: 100px;
-  right: 40px;
+.asapButton:hover {
+  background-color: #e45b06;
 }
 
-.payButton:hover, .asapButton:hover {
+.payButton {
+  background-color: #f06406;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.payButton:hover {
   background-color: #e45b06;
+}
+
+.thankYouDialog {
+  margin-top: 20px;
+  background-color: #000000;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.saveDetailsButton {
+  background-color: #f06406;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.saveDetailsButton:hover {
+  background-color: #e45b06;
+}
+
+.actionButton {
+  background-color: #f06406;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  min-width: 150px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.actionButton:hover {
+  background-color: #e45b06;
+}
+
+.payButton {
+  margin-top: 0;
+}
+
+.successMessage {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.deliveringDialog {
+  margin-top: 20px;
+  color: #f06406;
+  padding: 15px 20px;
+  border-radius: 6px;
+  border: 1px solid #f06406;
+  font-size: 1rem;
+  text-align: center;
 }

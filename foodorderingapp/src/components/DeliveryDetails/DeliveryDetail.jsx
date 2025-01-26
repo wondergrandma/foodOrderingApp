@@ -65,7 +65,7 @@ function DeliveryDetail({ onAddressSave }) {
             onChange={handleInputChange}
             className={styles.input}
           />
-          <button className={styles.saveButton} onClick={handleSave}>
+          <button className={styles.actionButton} onClick={handleSave}>
             Save Address
           </button>
         </div>
@@ -73,7 +73,7 @@ function DeliveryDetail({ onAddressSave }) {
         <div className={styles.addressDisplay}>
           <p>{address.street}</p>
           <p>{address.city}, {address.state} - {address.zipCode}</p>
-          <button className={styles.editButton} onClick={handleEdit}>
+          <button className={styles.actionButton} onClick={handleEdit}>
             Edit Address
           </button>
         </div>
