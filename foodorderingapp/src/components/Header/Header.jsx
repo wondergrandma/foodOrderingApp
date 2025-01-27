@@ -25,6 +25,10 @@ function Header({ onSearch }) {
     navigate(`/restaurant/${id}`);
   };
 
+  const goToCart = () => {
+    navigate("/payment");
+  };
+
   const getTotalOrders = () => {
     return cart.reduce((total, item) => total + item.quantity, "");
   };
@@ -142,7 +146,7 @@ function Header({ onSearch }) {
                     <li>
                       <div
                         className={styles.menuItemsStyle}
-                        onClick={redirectToHomepage}
+                        onClick={goToCart}
                       >
                         {getTotalOrders()} Cart
                       </div>

@@ -46,6 +46,7 @@
 .menuItemsStyle{
     font-size: 19px;
     cursor: pointer;   
+    width: max-content;
 }
 
 .menuItemsStyle:hover{
