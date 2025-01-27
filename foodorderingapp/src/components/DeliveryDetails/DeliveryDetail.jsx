@@ -1,81 +1,86 @@
 import React, { useState } from "react";
 import styles from "./DeliveryDetail.module.css";
 
-function DeliveryDetail({ onAddressSave }) {
+function DeliveryDetail({ onAddressSave, address, isEditable }) {
   const [isEditing, setIsEditing] = useState(true);
-  const [address, setAddress] = useState({
-    street: "",
-    city: "",
-    zipCode: "",
-    state: "",
-  });
+  const [currentAddress, setCurrentAddress] = useState(
+    address || {
+      street: "",
+      city: "",
+      zipCode: "",
+      state: "",
+    }
+  );
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setAddress((prevAddress) => ({ ...prevAddress, [name]: value }));
+    setCurrentAddress((prevAddress) => ({ ...prevAddress, [name]: value }));
   };
 
   const handleSave = () => {
-    if (!address.street || !address.city || !address.zipCode || !address.state) {
+    if (!currentAddress.street || !currentAddress.city || !currentAddress.zipCode || !currentAddress.state) {
       alert("Please fill in all address fields!");
       return;
     }
     setIsEditing(false);
-    onAddressSave(address);
-  };
-
-  const handleEdit = () => {
-    setIsEditing(true);
+    onAddressSave(currentAddress);
   };
 
   return (
     <div className={styles.deliveryDetailContainer}>
       <h3>Delivery Address</h3>
-      {isEditing ? (
+      {isEditable && isEditing ? (
         <div className={styles.addressForm}>
           <input
             type="text"
             name="street"
             placeholder="Street Address"
-            value={address.street}
+            value={currentAddress.street}
             onChange={handleInputChange}
             className={styles.input}
+            disabled={!isEditable}
           />
           <input
             type="text"
             name="city"
             placeholder="City"
-            value={address.city}
+            value={currentAddress.city}
             onChange={handleInputChange}
             className={styles.input}
+            disabled={!isEditable}
           />
           <input
             type="text"
             name="zipCode"
             placeholder="ZIP Code"
-            value={address.zipCode}
+            value={currentAddress.zipCode}
             onChange={handleInputChange}
             className={styles.input}
+            disabled={!isEditable}
           />
           <input
             type="text"
             name="state"
             placeholder="State"
-            value={address.state}
+            value={currentAddress.state}
             onChange={handleInputChange}
             className={styles.input}
+            disabled={!isEditable}
           />
-          <button className={styles.actionButton} onClick={handleSave}>
+          <button
+            className={styles.actionButton}
+            onClick={handleSave}
+            disabled={!isEditable}
+          >
             Save Address
           </button>
         </div>
       ) : (
         <div className={styles.addressDisplay}>
-          <p>{address.street}</p>
-          <p>{address.city}, {address.state} - {address.zipCode}</p>
-          <button className={styles.actionButton} onClick={handleEdit}>
-            Edit Address
-          </button>
+          <p>{currentAddress.street}</p>
+          <p>
+            {currentAddress.city}, {currentAddress.state} - {currentAddress.zipCode}
+          </p>
         </div>
       )}
     </div>
