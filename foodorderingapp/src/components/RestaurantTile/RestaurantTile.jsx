@@ -26,13 +26,30 @@ function RestaurantTile() {
       .toLowerCase();
     const currentTime = today.getHours() * 100 + today.getMinutes();
 
-    const hours = restaurant.hours[currentDay];
-    if (!hours) return false;
+    const hours = restaurant.hours?.[currentDay];
+    if (!hours) {
+      console.warn(`No hours defined for ${restaurant.name} on ${currentDay}`);
+      return false;
+    }
 
     const [opening, closing] = hours.split("-");
+    if (!opening || !closing) {
+      console.error(`Invalid hours format for ${restaurant.name}: ${hours}`);
+      return false;
+    }
 
     const [openingHour, openingMinute] = opening.split(":").map(Number);
     const [closingHour, closingMinute] = closing.split(":").map(Number);
+
+    if (
+      isNaN(openingHour) ||
+      isNaN(openingMinute) ||
+      isNaN(closingHour) ||
+      isNaN(closingMinute)
+    ) {
+      console.error(`Invalid time values for ${restaurant.name}: ${hours}`);
+      return false;
+    }
 
     const openingTime = openingHour * 100 + openingMinute;
     const closingTime = closingHour * 100 + closingMinute;
