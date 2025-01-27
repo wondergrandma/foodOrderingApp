@@ -27,7 +27,7 @@
 .navigationButton {
     background: none;
     border: none;
-    color: #f06406;
+    color: #FA812F;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -40,7 +40,7 @@
 }
 
 .navigationButton:hover:enabled {
-  color: #e45b06;
+  color: #FA812F;
 }
 
 .stepIndicator {
@@ -51,13 +51,12 @@
 .stepDot {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
   background-color: #fdf6e3;
   transition: background-color 0.3s ease;
 }
 
 .activeStep {
-  background-color: #f06406;
+  background-color: #FA812F;
 }
 
 .stepTitle {
@@ -82,34 +81,32 @@
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ddd;
-  border-radius: 6px;
   width: 100%;
+  background-color: #FEF3E3;
 }
 
 .asapButton {
-  background-color: #f06406;
+  background-color: #FA812F;
   color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .asapButton:hover {
-  background-color: #e45b06;
+  background-color: #FA812F;
 }
 
 .payButton {
-  background-color: #f06406;
+  background-color: #FA812F;
   color: #fff;
   border: none;
   padding: 12px 25px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s ease;
@@ -118,7 +115,7 @@
 }
 
 .payButton:hover {
-  background-color: #e45b06;
+  background-color: #FA812F;
 }
 
 .thankYouDialog {
@@ -132,13 +129,12 @@
 }
 
 .saveDetailsButton {
-  background-color: #f06406;
+  background-color: #FA812F;
   color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s ease;
@@ -147,17 +143,16 @@
 }
 
 .saveDetailsButton:hover {
-  background-color: #e45b06;
+  background-color: #FA812F;
 }
 
 .actionButton {
-  background-color: #f06406;
+  background-color: #FA812F;
   color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s ease;
@@ -168,7 +163,7 @@
 }
 
 .actionButton:hover {
-  background-color: #e45b06;
+  background-color: #FA812F;
 }
 
 .payButton {
@@ -189,10 +184,21 @@
 
 .deliveringDialog {
   margin-top: 20px;
-  color: #f06406;
+  color: #FA812F;
   padding: 15px 20px;
   border-radius: 6px;
-  border: 1px solid #f06406;
+  border: 1px solid #FA812F;
   font-size: 1rem;
   text-align: center;
+}
+
+.totalPrice{
+  color: #FA812F;
+  font-weight: 600;
+}
+
+.lineHorizontal {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin: 10px 0; 
 }

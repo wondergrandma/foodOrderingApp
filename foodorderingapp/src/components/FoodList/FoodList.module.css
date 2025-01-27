@@ -19,8 +19,12 @@
     padding-right: 10px;
     min-width: none;
 
+    max-height: 40rem;
+
     scrollbar-width: thin;
     scrollbar-color: transparent;
+
+    scrollbar-width: none;
 }
 
 

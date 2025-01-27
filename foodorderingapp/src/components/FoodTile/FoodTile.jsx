@@ -17,7 +17,7 @@ function FoodTile({ menu }) {
   return (
     <div className={styles.foodTileContainer}>
       <div className={styles.foodTileContainer}>
-      <div className={styles.foodTileMenu}>Menu</div>
+        <div className={styles.foodTileMenu}>Menu</div>
 
         {menu.map((item, index) => (
           <div
@@ -34,17 +34,17 @@ function FoodTile({ menu }) {
               className={styles.buttonContainer}
             >
               <button
-                className={styles.addButton}
-                onClick={() => addToCart({ ...item, quantity: 1 })}
-              >
-                +
-              </button>
-              <div style={{ width: "10px" }}></div>
-              <button
                 className={styles.removeButton}
                 onClick={() => removeFromCart(item.name)}
               >
                 -
+              </button>
+              <div style={{ width: "10px" }}></div>
+              <button
+                className={styles.addButton}
+                onClick={() => addToCart({ ...item, quantity: 1 })}
+              >
+                +
               </button>
             </div>
           </div>
