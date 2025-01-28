@@ -29,6 +29,10 @@ function Header({ onSearch }) {
     navigate("/payment");
   };
 
+  const goToProfile = () => {
+    navigate("/profile");
+  };
+
   const getTotalOrders = () => {
     return cart.reduce((total, item) => total + item.quantity, "");
   };
@@ -152,7 +156,12 @@ function Header({ onSearch }) {
                       </div>
                     </li>
                     <li>
-                      <div className={styles.menuItemsStyle}>Menu</div>
+                    <div
+                        className={styles.menuItemsStyle}
+                        onClick={goToProfile}
+                      >
+                        Profile
+                      </div>
                     </li>
                   </>
                 ) : (

@@ -40,7 +40,7 @@ function Location() {
         },
         (err) => {
           setError(
-            "Unable to retrieve location. Please enable location services."
+            "Unknown"
           );
           console.error(err);
           setCity("Location unavailable");
@@ -66,7 +66,7 @@ function Location() {
       }}
     >
       <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: "black" }} />
-      {error ? <p>{error}</p> : <p style={{ margin: 0 }}>{city}</p>}
+      {error ? <p style={{ margin: 0 }}>{error}</p> : <p style={{ margin: 0 }}>{city}</p>}
     </div>
   );
 }
