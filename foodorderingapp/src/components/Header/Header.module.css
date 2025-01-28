@@ -1,6 +1,7 @@
 .headerRow{
     background-color: #FA812F;
     position: fixed;
+    top: 0;
     justify-content: center;
     width: 100%;
     height: 110px;
