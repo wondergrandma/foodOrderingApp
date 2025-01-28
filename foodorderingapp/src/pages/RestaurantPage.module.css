@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    padding-top: 80px;
     gap: 20px;
     margin: 20px;
   }
@@ -16,7 +17,7 @@
   .backArrow {
     background: none;
     border: none;
-    color: #f06406;
+    color: #FA812F;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -24,7 +25,7 @@
   }
   
   .backArrow:hover {
-    color: #e45b06;
+    color: #FA812F;
   }
   
   .foodListSection {
@@ -36,18 +37,38 @@
   }
   
   .payButton {
-    position: fixed;
     bottom: 80px;
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #f06406;
+    width: 90px;
+    background-color: #FA812F;
     border: none;
     align-self: stretch;
     cursor: pointer;
   }
   
   .payButton:hover {
-    background-color: #e45b06;
+    background-color: #FA812F;
   }
-  
+
+.line{
+  height: 850px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.row{
+  display: flex;
+  flex-direction: column;
+}
+
+.totalPrice{
+  color: #FA812F;
+  font-weight: 600;
+}
+
+.lineHorizontal {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin: 10px 0; 
+}

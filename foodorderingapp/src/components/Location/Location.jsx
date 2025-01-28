@@ -39,7 +39,7 @@ function Location() {
           fetchCityName(latitude, longitude);
         },
         (err) => {
-          setError("Unable to retrieve location. Please enable location services.");
+          setError("Unknown");
           console.error(err);
           setCity("Location unavailable");
         }
@@ -55,10 +55,18 @@ function Location() {
   }, []);
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        paddingBottom: "55px",
+        gap: "1rem",
+      }}
+    >
       <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: "black" }} />
       {error ? (
-        <p>{error}</p>
+        <p style={{ margin: 0 }}>{error}</p>
       ) : (
         <p style={{ margin: 0 }}>{city}</p>
       )}

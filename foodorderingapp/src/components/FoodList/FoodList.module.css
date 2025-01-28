@@ -8,20 +8,23 @@
 
 .totalPrice {
   font-size: 16px;
-  color: #f06406;
+  color: #FA812F;
   margin-top: 30px;
   font-weight: bold;
 }
 
 .foodListContainer {
-    height: 85vh; 
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 10px;
     min-width: none;
 
+    max-height: 40rem;
+
     scrollbar-width: thin;
     scrollbar-color: transparent;
+
+    scrollbar-width: none;
 }
 
 

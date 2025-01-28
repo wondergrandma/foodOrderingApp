@@ -1,52 +1,192 @@
 import styles from "./Header.module.css";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Location from "../Location/Location";
+import SearchBar from "../SearchBar/SearchBar";
 import { useNavigate } from "react-router-dom";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import { CartContext } from "../../storage/CartProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import restaurants from "../../data/restaurants";
+import { useAuth } from "../../authentication/AuthProvider";
+import LoginForm from "../AuthForm/LoginForm";
+import RegisterForm from "../AuthForm/RegisterForm";
 
-function Header() {
+function Header({ onSearch }) {
+  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [currentForm, setCurrentForm] = useState(null);
+  const { cart } = useContext(CartContext);
+  const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+
   const redirectToHomepage = () => {
     navigate("/");
   };
-  const { cart } = useContext(CartContext);
+
+  const goToRestaurant = (id) => {
+    navigate(`/restaurant/${id}`);
+  };
+
+  const goToCart = () => {
+    navigate("/payment");
+  };
+
+  const goToProfile = () => {
+    navigate("/profile");
+  };
+
+  const getTotalOrders = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const updateFilteredRestaurants = (data) => {
+    setFilteredRestaurants(data);
+    if (onSearch) {
+      onSearch(data);
+    }
+  };
+
+  const handleSearchClick = () => {
+    setIsSearchExpanded(true);
+  };
+
+  const closeSearch = () => {
+    setIsSearchExpanded(false);
+  };
+
+  const showLoginForm = () => {
+    setCurrentForm("login");
+  };
+
+  const showRegisterForm = () => {
+    setCurrentForm("register");
+  };
+
+  const closeForm = () => {
+    setCurrentForm(null);
+  };
+
+  function getLowestPrice(restaurant) {
+    const lowestPrice = Math.min(...restaurant.menu.map((item) => item.price));
+    return lowestPrice;
+  }
 
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.header}>
-        <div className={styles.title}>
-          <p
-            className={`${styles.titleText} ${styles.unselectable}`}
-            onClick={redirectToHomepage}
+      {isSearchExpanded && (
+        <div className={styles.shadowOverlay} onClick={closeSearch}></div>
+      )}
+
+      {currentForm && (
+        <div className={styles.formOverlay} onClick={closeForm}>
+          <div
+            className={styles.formContainer}
+            onClick={(e) => e.stopPropagation()}
           >
-            Foodie
-          </p>
-        </div>
-        <div className={styles.centerContainer}>
-          <div className={styles.searchContainer}>
-            <img
-              src="/square_search.png"
-              className={styles.searchIcon}
-              alt="Search Icon"
-            ></img>
-            <input
-              type="text"
-              placeholder="Search for food ..."
-              className={styles.search}
-            ></input>
+            {currentForm === "login" && <LoginForm onClose={closeForm} />}
+            {currentForm === "register" && <RegisterForm onClose={closeForm} />}
           </div>
         </div>
-        <div>
-          <Location></Location>
+      )}
+
+      <div
+        className={`${styles.headerRow} ${
+          isSearchExpanded ? styles.expanded : ""
+        }`}
+      >
+        {!isSearchExpanded && (
+          <div className={styles.titleLocation}>
+            <p
+              className={`${styles.titleText} ${styles.unselectable}`}
+              onClick={redirectToHomepage}
+            >
+              Foodie
+            </p>
+            <Location />
+          </div>
+        )}
+        <div className={styles.searchColumn}>
+          <div className={styles.searchBarWrapper}>
+            {isLoggedIn && (
+              <SearchBar
+                onSearch={updateFilteredRestaurants}
+                onSearchClick={handleSearchClick}
+              />
+            )}
+            {isSearchExpanded && (
+              <button className={styles.closeButton} onClick={closeSearch}>
+                ✖
+              </button>
+            )}
+          </div>
+          {isSearchExpanded && filteredRestaurants.length > 0 && (
+            <div className={styles.restaurantListWrapper}>
+              <div className={styles.restaurantList}>
+                {filteredRestaurants.map((restaurant, index) => (
+                  <div key={index} className={styles.restaurantItem}>
+                    <div
+                      className={styles.concreteRestaurantTile}
+                      onClick={() => goToRestaurant(restaurant.id)}
+                    >
+                      <div className={styles.row}>
+                        <div>{restaurant.name}</div>|
+                        <div className={styles.row}>
+                          <div>{restaurant.rating} </div>
+                          <div className={styles.star}>&#9733;</div>
+                        </div>
+                      </div>
+                      <div>Food from: ${getLowestPrice(restaurant)}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-        <div>
-          <ShoppingCart></ShoppingCart>
-        </div>
-      </div>
-      <div className={styles.burgerMenu}>
-        <BurgerMenu></BurgerMenu>
+        {!isSearchExpanded && (
+          <div className={styles.menuItems}>
+            <div>
+              <ul>
+                {isLoggedIn ? (
+                  <>
+                    <li>
+                      <div className={styles.menuItemsStyle} onClick={goToCart}>
+                        {getTotalOrders()} Cart
+                      </div>
+                    </li>
+                    <li>
+                      <div
+                        className={styles.menuItemsStyle}
+                        onClick={goToProfile}
+                      >
+                        Profile
+                      </div>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <button
+                        className={styles.menuItemsStyle}
+                        onClick={showLoginForm}
+                      >
+                        Login
+                      </button>
+                    </li>
+                    <li>
+                      <div className={styles.registerContainer}>
+                        <button
+                          className={styles.registerStyle}
+                          onClick={showRegisterForm}
+                        >
+                          Register
+                        </button>
+                      </div>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

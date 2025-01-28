@@ -1,83 +1,149 @@
+import React, { useContext, useState, useEffect } from "react";
 import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import DeliveryDetail from "../components/DeliveryDetails/DeliveryDetail";
-import styles from "./PaymentPage.module.css";
-import FoodTile from "../components/FoodTile/FoodTile";
-import FoodList from "../components/FoodList/FoodList";
+import StepperNavigation from "../components/PaymentSteps/StepperNavigation";
+import ReviewCart from "../components/PaymentSteps/ReviewCart";
+import DeliveryDetails from "../components/PaymentSteps/DeliveryDetails";
+import ReviewAndComplete from "../components/PaymentSteps/ReviewAndComplete";
+
 import { CartContext } from "../storage/CartProvider";
-import { useContext, useState } from "react";
+import { ChatContext } from "../storage/ChatProvider";
+import styles from "./PaymentPage.module.css";
+import { toLocalDateTimeString } from "../utils/DateUtils";
+
+import DeliveryChat from "../components/DeliveryChat/DeliveryChat";
 
 function PaymentPage() {
-  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
+  const { setEndTime, setChatVisible } = useContext(ChatContext);
+
+  const [currentStep, setCurrentStep] = useState(1);
   const [deliveryAddress, setDeliveryAddress] = useState(null);
   const [deliveryTime, setDeliveryTime] = useState("");
-  const [isAsap, setIsAsap] = useState(false);
+  const [earliestTime, setEarliestTime] = useState(() => {
+    const soonestTime = new Date();
+    soonestTime.setMinutes(soonestTime.getMinutes() + 25);
+    soonestTime.setSeconds(0);
+    soonestTime.setMilliseconds(0);
+    return soonestTime;
+  });
+
+  const [isAddressValid, setIsAddressValid] = useState(false);
+  const [isTimeValid, setIsTimeValid] = useState(true);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
+  const [isEditable, setIsEditable] = useState(true);
+  const [orderSummary, setOrderSummary] = useState([]);
+
+  const [showChat, setShowChat] = useState(false);
+
+  useEffect(() => {
+    setIsAddressValid(!!deliveryAddress);
+  }, [deliveryAddress]);
+
+  useEffect(() => {
+    if (deliveryTime) {
+      const selectedTime = new Date(deliveryTime);
+      setIsTimeValid(selectedTime >= earliestTime);
+    } else {
+      setIsTimeValid(false);
+    }
+  }, [deliveryTime, earliestTime]);
 
   const handleDeliveryTimeChange = (e) => {
+    if (!isEditable) return;
     setDeliveryTime(e.target.value);
-    setIsAsap(false);
   };
 
-  const handleAsapToggle = () => {
-    setIsAsap((prevIsAsap) => !prevIsAsap);
-    if (isAsap) {
-      setDeliveryTime("");
-    }
+  const handleEarliestDelivery = () => {
+    if (!isEditable) return;
+    const localString = toLocalDateTimeString(earliestTime);
+    setDeliveryTime(localString);
   };
 
   const handlePay = () => {
-    if (!deliveryAddress) {
-      alert("Please save your delivery address first!");
-      return;
-    }
-    setShowThanks(true);
+    setIsProcessing(true);
     setTimeout(() => {
-      setShowThanks(false);
+      setOrderSummary(cart);
+      clearCart();
+      setShowThanks(true);
+      setIsProcessing(false);
+      setIsEditable(false);
+
+      if (deliveryTime) {
+        setEndTime(new Date(deliveryTime));
+      }
+      setChatVisible(true);
     }, 3000);
+  };
+
+
+  const computeMinutesLeft = () => {
+    if (!deliveryTime) return 0;
+    const now = new Date();
+    const selected = new Date(deliveryTime);
+    const diffMs = selected.getTime() - now.getTime();
+    const diffMins = Math.ceil(diffMs / 60000);
+    return diffMins < 0 ? 0 : diffMins;
+  };
+
+  const isNextButtonDisabled = () => {
+    if (currentStep === 1 && cart.length === 0) return true;
+    if (currentStep === 2 && (!isAddressValid || !isTimeValid)) return true;
+    if (currentStep === 3) return true;
+    return false;
+  };
+
+  const handleDeliveryComplete = () => {
+    setShowChat(false);
   };
 
   return (
     <>
       <Header />
-      <div className={styles.paymentPageContainer}>
-        <div>
-          <DeliveryDetail onAddressSave={setDeliveryAddress} />
-          <h3>Delivery Time</h3>
-          <div>
-            <input
-              type="datetime-local"
-              value={deliveryTime}
-              onChange={handleDeliveryTimeChange}
-              disabled={isAsap}
-            />
-            <button className={styles.asapButton} onClick={handleAsapToggle}>
-              {isAsap ? "ASAP Selected" : "Set to ASAP"}
-            </button>
-          </div>
-        </div>
 
-        <FoodTile
-          menu={cart}
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
+      <div className={styles.paymentPageContainer}>
+        <StepperNavigation
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+          isProcessing={isProcessing}
+          isEditable={isEditable}
+          isNextButtonDisabled={isNextButtonDisabled}
         />
 
-        <div>
-          <FoodList />
-          <div>
-            <button className={styles.payButton} onClick={handlePay}>
-              Pay
-            </button>
-            {showThanks && (
-              <div className={styles.thankYouDialog}>
-                Thank you for your order!
-              </div>
-            )}
-          </div>
-        </div>
+        {currentStep === 1 && <ReviewCart cart={cart} />}
+        
+        {currentStep === 2 && (
+          <DeliveryDetails
+            deliveryAddress={deliveryAddress}
+            setDeliveryAddress={setDeliveryAddress}
+            isAddressValid={isAddressValid}
+            isEditable={isEditable}
+            earliestTime={earliestTime}
+            deliveryTime={deliveryTime}
+            handleDeliveryTimeChange={handleDeliveryTimeChange}
+            handleEarliestDelivery={handleEarliestDelivery}
+            isTimeValid={isTimeValid}
+          />
+        )}
+        
+        {currentStep === 3 && (
+          <ReviewAndComplete
+            deliveryAddress={deliveryAddress}
+            deliveryTime={deliveryTime}
+            orderSummary={orderSummary}
+            cart={cart}
+            handlePay={handlePay}
+            isProcessing={isProcessing}
+            showThanks={showThanks}
+          />
+        )}
       </div>
-      <Footer />
+
+      <DeliveryChat
+        isOpen={showChat}
+        initialMinutesLeft={computeMinutesLeft()}
+        onDeliveryComplete={handleDeliveryComplete}
+      />
     </>
   );
 }

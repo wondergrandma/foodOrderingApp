@@ -22,10 +22,12 @@ const restaurants = [
       tuesday: "11:00-22:00",
       wednesday: "11:00-22:00",
       thursday: "11:00-22:00",
-      friday: "11:00-23:00",
+      friday: "11:00-00:50",
       saturday: "10:00-23:00",
       sunday: "10:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 2,
@@ -54,6 +56,8 @@ const restaurants = [
       saturday: "12:00-23:30",
       sunday: "12:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 3,
@@ -82,6 +86,8 @@ const restaurants = [
       saturday: "12:00-23:30",
       sunday: "12:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 4,
@@ -110,6 +116,8 @@ const restaurants = [
       saturday: "11:30-23:30",
       sunday: "11:30-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 5,
@@ -138,6 +146,8 @@ const restaurants = [
       saturday: "12:00-00:00",
       sunday: "12:00-22:30",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 6,
@@ -166,6 +176,8 @@ const restaurants = [
       saturday: "11:00-23:00",
       sunday: "11:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 7,
@@ -194,6 +206,8 @@ const restaurants = [
       saturday: "11:00-23:00",
       sunday: "11:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 8,
@@ -222,6 +236,8 @@ const restaurants = [
       saturday: "07:00-20:00",
       sunday: "08:00-18:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 9,
@@ -250,13 +266,15 @@ const restaurants = [
       saturday: "12:00-23:00",
       sunday: "12:00-21:30",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 10,
     name: "Spicy Thai",
     cuisine: "Thai",
     location: "Bangkok, Thailand",
-    rating: 4.7,
+    rating: 4.1,
     menu: [
       { name: "Pad Thai", price: 14.99 },
       { name: "Green Curry", price: 16.99 },
@@ -278,6 +296,8 @@ const restaurants = [
       saturday: "11:30-23:00",
       sunday: "11:30-21:30",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 11,
@@ -306,13 +326,15 @@ const restaurants = [
       saturday: "10:00-22:30",
       sunday: "10:00-21:30",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 12,
     name: "Mediterranean Oasis",
     cuisine: "Mediterranean",
     location: "Athens, Greece",
-    rating: 4.8,
+    rating: 3.1,
     menu: [
       { name: "Mixed Meze Platter", price: 24.99 },
       { name: "Moussaka", price: 18.99 },
@@ -334,13 +356,15 @@ const restaurants = [
       saturday: "12:00-00:00",
       sunday: "12:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 13,
     name: "Seoul Kitchen",
     cuisine: "Korean",
     location: "Seoul, South Korea",
-    rating: 4.7,
+    rating: 3.5,
     menu: [
       { name: "Bibimbap", price: 16.99 },
       { name: "Korean BBQ Set", price: 32.99 },
@@ -362,6 +386,8 @@ const restaurants = [
       saturday: "11:30-23:00",
       sunday: "11:30-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 14,
@@ -390,6 +416,8 @@ const restaurants = [
       saturday: "17:00-02:00",
       sunday: "17:00-23:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 15,
@@ -418,13 +446,15 @@ const restaurants = [
       saturday: "12:00-23:30",
       sunday: "12:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 16,
     name: "Vietnam House",
     cuisine: "Vietnamese",
     location: "Ho Chi Minh City, Vietnam",
-    rating: 4.6,
+    rating: 4.4,
     menu: [
       { name: "Pho Bo", price: 12.99 },
       { name: "Banh Mi", price: 8.99 },
@@ -446,6 +476,8 @@ const restaurants = [
       saturday: "10:00-23:00",
       sunday: "10:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 17,
@@ -474,13 +506,15 @@ const restaurants = [
       saturday: "12:00-00:00",
       sunday: "12:00-23:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 18,
     name: "Nordic Kitchen",
     cuisine: "Scandinavian",
     location: "Copenhagen, Denmark",
-    rating: 4.8,
+    rating: 2.1,
     menu: [
       { name: "Smørrebrød Selection", price: 18.99 },
       { name: "Gravlax", price: 16.99 },
@@ -502,6 +536,8 @@ const restaurants = [
       saturday: "10:00-23:00",
       sunday: "10:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 19,
@@ -530,6 +566,8 @@ const restaurants = [
       saturday: "11:00-00:00",
       sunday: "11:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 20,
@@ -558,6 +596,8 @@ const restaurants = [
       saturday: "12:00-23:00",
       sunday: "12:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 21,
@@ -586,6 +626,8 @@ const restaurants = [
       saturday: "11:00-00:00",
       sunday: "11:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 22,
@@ -614,6 +656,8 @@ const restaurants = [
       saturday: "11:00-23:00",
       sunday: "11:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 23,
@@ -642,6 +686,8 @@ const restaurants = [
       saturday: "11:00-23:30",
       sunday: "11:00-22:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 24,
@@ -670,13 +716,15 @@ const restaurants = [
       saturday: "11:30-23:00",
       sunday: "11:30-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 25,
     name: "Malaysian Street Food",
     cuisine: "Malaysian",
     location: "Kuala Lumpur, Malaysia",
-    rating: 4.6,
+    rating: 1.0,
     menu: [
       { name: "Nasi Lemak", price: 11.99 },
       { name: "Char Kway Teow", price: 12.99 },
@@ -698,6 +746,8 @@ const restaurants = [
       saturday: "10:00-23:00",
       sunday: "10:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 26,
@@ -726,6 +776,8 @@ const restaurants = [
       saturday: "12:00-23:00",
       sunday: "12:00-21:00",
     },
+    delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
 ];
 

@@ -1,64 +1,62 @@
+.headerRow{
+    background-color: #FA812F;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    height: 110px;
+    padding-top: 25px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: height 0.3s ease;
+    --mask: conic-gradient(from -30deg at bottom,#0000,#000 1deg 59deg,#0000 60deg) 50%/2.31rem 100%;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+}
+
+.headerRow.expanded {
+    height: 500px; 
+  }
+
+  .menuItems ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+
+.titleLocation{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-left: 30px;
+}
+
+.menuItems{
+    display: flex;
+    flex-direction: row;
+    padding-right: 30px;
+}
+
 .headerContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
 }
 
-.header{
-    height: 50px;
-    width: 100%;
-    padding: 5px 20px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FA812F;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+.menuItemsStyle{
+    font-size: 19px;
+    cursor: pointer;   
+    width: max-content;
 }
 
-.searchContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menuItemsStyle:hover{
+    color: #FEF3E3;
 }
 
 .search{
-    height: 30px;
-    width: 230px;
-    padding: 0 10px;
-    background-color: #FEF3E3;
-}
-
-.searchIcon{
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.burgerMenu{
-    height: 60px;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FA812F;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.burgerMenu:hover {
-    background-color: #e45b06;
-}
-
-.title{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-shrink: 0;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .titleText {
@@ -73,4 +71,133 @@
     -moz-user-select: none;
     -ms-user-select: none;
   }
+
+.searchColumn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurantListWrapper {
+    max-height: 350px; 
+    overflow-y: auto; 
+    margin-top: 10px;
+    padding: 8px; 
+  }
   
+  .restaurantList {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px; 
+  }
+  
+  .restaurantItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .concreteRestaurantTile {
+    background-color: #FEF3E3; 
+    padding-left: 13px;
+    padding-right: 13px;
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 650px;
+    height: 90px;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+
+.restaurantListWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.star{
+    padding-bottom: 6px;
+    font-size: 30px;
+    color: #FA812F;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .shadowOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+  }
+
+  .searchBarWrapper {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;;
+    position: relative;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FEF3E3;
+    cursor: pointer;
+    position: absolute;
+    right: -40px;
+}
+
+.closeButton:hover {
+    color: #dcd1c1;
+}
+
+.formOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .formContainer {
+    height: 30%;
+    background: #FA812F;
+    padding: 20px;
+  }
+  
+.registerContainer{
+  height: 30px;
+  padding-inline: 10px;
+  background-color: #FEF3E3;
+}
+
+.registerContainer:hover{
+  background-color: #dcd1c1;
+}
+
+.registerStyle{
+  font-size: 19px;
+  cursor: pointer;   
+  width: max-content;
+}
+
+.registerStyle:hover{
+  color: #000;
+}

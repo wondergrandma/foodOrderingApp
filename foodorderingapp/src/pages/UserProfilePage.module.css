@@ -1,0 +1,124 @@
+
+.userProfileContainer {
+    background-color: #FEF3E3;
+    max-width: 800px;
+    margin: 200px auto 100px auto;
+    padding: 20px;
+}
+  
+  .pageTitle {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+  }
+  
+  .profileSection {
+    margin-bottom: 10px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.2rem;
+    color: #FA812F;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .profileSection p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .editButton {
+    display: inline-block;
+    background-color: #FA812F;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  .editForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formSection {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  
+  .inputField {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fef3e3;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 15px;
+    transition: border-color 0.2s ease;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  .inputField:focus {
+    border-color: #FA812F;
+  }
+  
+  .buttonsRow {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+  
+  .saveButton {
+    background-color: #FA812F;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .cancelButton {
+    background-color: transparent;
+    color: #FA812F;
+    border: 2px solid #FA812F;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .cancelButton:hover {
+    color: #FA812F;
+  }
