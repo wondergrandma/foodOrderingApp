@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-
 import Header from "../components/Header/Header";
 import StepperNavigation from "../components/PaymentSteps/StepperNavigation";
 import ReviewCart from "../components/PaymentSteps/ReviewCart";
@@ -7,13 +6,15 @@ import DeliveryDetails from "../components/PaymentSteps/DeliveryDetails";
 import ReviewAndComplete from "../components/PaymentSteps/ReviewAndComplete";
 
 import { CartContext } from "../storage/CartProvider";
-
+import { ChatContext } from "../storage/ChatProvider";
 import styles from "./PaymentPage.module.css";
-
 import { toLocalDateTimeString } from "../utils/DateUtils";
+
+import DeliveryChat from "../components/DeliveryChat/DeliveryChat";
 
 function PaymentPage() {
   const { cart, clearCart } = useContext(CartContext);
+  const { setEndTime, setChatVisible } = useContext(ChatContext);
 
   const [currentStep, setCurrentStep] = useState(1);
   const [deliveryAddress, setDeliveryAddress] = useState(null);
@@ -32,6 +33,8 @@ function PaymentPage() {
   const [showThanks, setShowThanks] = useState(false);
   const [isEditable, setIsEditable] = useState(true);
   const [orderSummary, setOrderSummary] = useState([]);
+
+  const [showChat, setShowChat] = useState(false);
 
   useEffect(() => {
     setIsAddressValid(!!deliveryAddress);
@@ -65,7 +68,22 @@ function PaymentPage() {
       setShowThanks(true);
       setIsProcessing(false);
       setIsEditable(false);
+
+      if (deliveryTime) {
+        setEndTime(new Date(deliveryTime));
+      }
+      setChatVisible(true);
     }, 3000);
+  };
+
+
+  const computeMinutesLeft = () => {
+    if (!deliveryTime) return 0;
+    const now = new Date();
+    const selected = new Date(deliveryTime);
+    const diffMs = selected.getTime() - now.getTime();
+    const diffMins = Math.ceil(diffMs / 60000);
+    return diffMins < 0 ? 0 : diffMins;
   };
 
   const isNextButtonDisabled = () => {
@@ -75,10 +93,14 @@ function PaymentPage() {
     return false;
   };
 
+  const handleDeliveryComplete = () => {
+    setShowChat(false);
+  };
+
   return (
     <>
       <Header />
-      
+
       <div className={styles.paymentPageContainer}>
         <StepperNavigation
           currentStep={currentStep}
@@ -116,6 +138,12 @@ function PaymentPage() {
           />
         )}
       </div>
+
+      <DeliveryChat
+        isOpen={showChat}
+        initialMinutesLeft={computeMinutesLeft()}
+        onDeliveryComplete={handleDeliveryComplete}
+      />
     </>
   );
 }

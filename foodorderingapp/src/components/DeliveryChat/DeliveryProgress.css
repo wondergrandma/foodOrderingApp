@@ -1,0 +1,31 @@
+.delivery-progress-container {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .track-line {
+    position: relative;
+    height: 6px;
+    background-color: #fef3e3;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .car-icon {
+    position: absolute;
+    top: -16px;
+    left: 0;
+    transition: left 1s linear;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+  
+  .home-icon {
+    position: absolute;
+    top: -16px;
+    right: 0;
+    font-size: 1.2rem;
+    user-select: none;
+  }
+  
