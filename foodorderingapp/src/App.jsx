@@ -17,19 +17,24 @@ function App() {
         <CartProvider>
           <ChatProvider>
             <Router>
-              <Routes>
-                <Route path="/" element={<HomePage></HomePage>}></Route>
-                <Route path="/about" element={<AboutPage></AboutPage>}></Route>
-                <Route
-                  path="/restaurant/:id"
-                  element={<RestaurantPage></RestaurantPage>}
-                ></Route>
-                <Route
-                  path="/payment"
-                  element={<PaymentPage></PaymentPage>}
-                ></Route>
+              <div style={{ padding: "0 2%" }}>
+                <Routes>
+                  <Route path="/" element={<HomePage></HomePage>}></Route>
+                  <Route
+                    path="/about"
+                    element={<AboutPage></AboutPage>}
+                  ></Route>
+                  <Route
+                    path="/restaurant/:id"
+                    element={<RestaurantPage></RestaurantPage>}
+                  ></Route>
+                  <Route
+                    path="/payment"
+                    element={<PaymentPage></PaymentPage>}
+                  ></Route>
                   <Route path="/profile" element={<UserProfilePage />} />
-              </Routes>
+                </Routes>
+              </div>
               <Footer></Footer>
             </Router>
           </ChatProvider>

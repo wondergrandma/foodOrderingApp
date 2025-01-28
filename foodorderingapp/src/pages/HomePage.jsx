@@ -15,9 +15,7 @@ function HomePage() {
       <RestaurantTile></RestaurantTile>
       <div style={{ height: "140px" }}></div>
 
-      <DeliveryChat
-        isOpen={isChatOpen}
-      />
+      <DeliveryChat isOpen={isChatOpen} />
     </>
   );
 }

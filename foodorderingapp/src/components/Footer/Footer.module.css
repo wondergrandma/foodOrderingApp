@@ -1,13 +1,12 @@
 .footer {
     height: 110px;
-    padding-top: 20px;
     width: 100%;
-    bottom: 0;
+    padding-top: 34px;
     background-color: #FA812F;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute; 
     --mask: conic-gradient(from 150deg at top,#0000,#000 1deg 59deg,#0000 60deg) 50%/2.31rem 100%;
     -webkit-mask: var(--mask);
             mask: var(--mask);

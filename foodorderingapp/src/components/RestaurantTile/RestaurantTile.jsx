@@ -97,6 +97,9 @@ function RestaurantTile() {
           )}.avif)`,
         }}
       >
+        {restaurant.specialOffer && (
+          <div className={styles.specialOffer}>🔥 Free food delivery!</div>
+        )}
         <div className={styles.restaurantInfo}>
           <div className={styles.nameCuisineRatingContainer}>
             <div className={styles.nameCuisineContainer}>
@@ -116,8 +119,9 @@ function RestaurantTile() {
 
   return (
     <div className={styles.restaurantTileContainer}>
-      <div>
+      <div className={styles.lineRow}>
         <h1 className={styles.top}>Top</h1>
+        <div className={styles.line}></div>
       </div>
       <div className={styles.restaurantContainer}>
         {filterHighRatedRestaurants(restaurants).map((restaurant) => (
@@ -137,8 +141,9 @@ function RestaurantTile() {
           </div>
         ))}
       </div>
-      <div>
+      <div className={styles.lineRow}>
         <h1 className={styles.top}>Restaurants</h1>
+        <div className={styles.line}></div>
       </div>
       <div className={styles.restaurantContainer}>
         {filterRestaurantsExcludingTopRestaurants(restaurants).map(

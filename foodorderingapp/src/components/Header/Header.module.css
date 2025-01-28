@@ -2,7 +2,7 @@
     background-color: #FA812F;
     position: fixed;
     justify-content: center;
-    width: 96%;
+    width: 100%;
     height: 110px;
     padding-top: 25px;
     z-index: 1000;
@@ -19,11 +19,12 @@
     height: 500px; 
   }
 
-.menuItems ul{
+  .menuItems ul {
     list-style: none;
     display: flex;
     gap: 2rem;
-}
+  }
+  
 
 .titleLocation{
     display: flex;
@@ -181,3 +182,22 @@
     padding: 20px;
   }
   
+.registerContainer{
+  height: 30px;
+  padding-inline: 10px;
+  background-color: #FEF3E3;
+}
+
+.registerContainer:hover{
+  background-color: #dcd1c1;
+}
+
+.registerStyle{
+  font-size: 19px;
+  cursor: pointer;   
+  width: max-content;
+}
+
+.registerStyle:hover{
+  color: #000;
+}

@@ -34,7 +34,7 @@ function Header({ onSearch }) {
   };
 
   const getTotalOrders = () => {
-    return cart.reduce((total, item) => total + item.quantity, "");
+    return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
   const updateFilteredRestaurants = (data) => {
@@ -133,7 +133,7 @@ function Header({ onSearch }) {
                           <div className={styles.star}>&#9733;</div>
                         </div>
                       </div>
-                      <div>Food from: {getLowestPrice(restaurant)} kč</div>
+                      <div>Food from: ${getLowestPrice(restaurant)}</div>
                     </div>
                   </div>
                 ))}
@@ -148,15 +148,12 @@ function Header({ onSearch }) {
                 {isLoggedIn ? (
                   <>
                     <li>
-                      <div
-                        className={styles.menuItemsStyle}
-                        onClick={goToCart}
-                      >
+                      <div className={styles.menuItemsStyle} onClick={goToCart}>
                         {getTotalOrders()} Cart
                       </div>
                     </li>
                     <li>
-                    <div
+                      <div
                         className={styles.menuItemsStyle}
                         onClick={goToProfile}
                       >
@@ -168,19 +165,21 @@ function Header({ onSearch }) {
                   <>
                     <li>
                       <button
-                        className={styles.authButton}
+                        className={styles.menuItemsStyle}
                         onClick={showLoginForm}
                       >
                         Login
                       </button>
                     </li>
                     <li>
-                      <button
-                        className={styles.authButton}
-                        onClick={showRegisterForm}
-                      >
-                        Register
-                      </button>
+                      <div className={styles.registerContainer}>
+                        <button
+                          className={styles.registerStyle}
+                          onClick={showRegisterForm}
+                        >
+                          Register
+                        </button>
+                      </div>
                     </li>
                   </>
                 )}

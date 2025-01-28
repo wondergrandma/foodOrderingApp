@@ -42,24 +42,35 @@ function UserProfilePage() {
             <hr className={styles.separator} />
             <section className={styles.profileSection}>
               <h2 className={styles.sectionTitle}>Contact Information</h2>
-              <p><strong>Full Name:</strong> {fullName}</p>
-              <p><strong>Email:</strong> {email}</p>
-              <p><strong>Phone:</strong> {phone}</p>
+              <p>
+                <strong>Full Name:</strong> {fullName}
+              </p>
+              <p>
+                <strong>Email:</strong> {email}
+              </p>
+              <p>
+                <strong>Phone:</strong> {phone}
+              </p>
             </section>
 
             <hr className={styles.separator} />
             <section className={styles.profileSection}>
               <h2 className={styles.sectionTitle}>Address</h2>
-              <p><strong>Street:</strong> {street}</p>
-              <p><strong>City:</strong> {city}</p>
-              <p><strong>State:</strong> {state}</p>
-              <p><strong>ZIP Code:</strong> {zipCode}</p>
+              <p>
+                <strong>Street:</strong> {street}
+              </p>
+              <p>
+                <strong>City:</strong> {city}
+              </p>
+              <p>
+                <strong>State:</strong> {state}
+              </p>
+              <p>
+                <strong>ZIP Code:</strong> {zipCode}
+              </p>
             </section>
 
-            <button 
-              className={styles.editButton}
-              onClick={handleEdit}
-            >
+            <button className={styles.editButton} onClick={handleEdit}>
               Edit Profile
             </button>
           </>
@@ -142,16 +153,10 @@ function UserProfilePage() {
             </section>
 
             <div className={styles.buttonsRow}>
-              <button 
-                className={styles.saveButton}
-                onClick={handleSave}
-              >
+              <button className={styles.saveButton} onClick={handleSave}>
                 Save
               </button>
-              <button 
-                className={styles.cancelButton}
-                onClick={handleCancel}
-              >
+              <button className={styles.cancelButton} onClick={handleCancel}>
                 Cancel
               </button>
             </div>

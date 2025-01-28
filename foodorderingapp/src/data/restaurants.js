@@ -27,6 +27,7 @@ const restaurants = [
       sunday: "10:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 2,
@@ -56,6 +57,7 @@ const restaurants = [
       sunday: "12:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 3,
@@ -85,6 +87,7 @@ const restaurants = [
       sunday: "12:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 4,
@@ -114,6 +117,7 @@ const restaurants = [
       sunday: "11:30-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 5,
@@ -143,6 +147,7 @@ const restaurants = [
       sunday: "12:00-22:30",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 6,
@@ -172,6 +177,7 @@ const restaurants = [
       sunday: "11:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 7,
@@ -201,6 +207,7 @@ const restaurants = [
       sunday: "11:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 8,
@@ -230,6 +237,7 @@ const restaurants = [
       sunday: "08:00-18:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 9,
@@ -259,6 +267,7 @@ const restaurants = [
       sunday: "12:00-21:30",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 10,
@@ -288,6 +297,7 @@ const restaurants = [
       sunday: "11:30-21:30",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 11,
@@ -317,6 +327,7 @@ const restaurants = [
       sunday: "10:00-21:30",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 12,
@@ -346,6 +357,7 @@ const restaurants = [
       sunday: "12:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 13,
@@ -375,6 +387,7 @@ const restaurants = [
       sunday: "11:30-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 14,
@@ -404,6 +417,7 @@ const restaurants = [
       sunday: "17:00-23:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 15,
@@ -433,6 +447,7 @@ const restaurants = [
       sunday: "12:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 16,
@@ -462,6 +477,7 @@ const restaurants = [
       sunday: "10:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 17,
@@ -491,6 +507,7 @@ const restaurants = [
       sunday: "12:00-23:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 18,
@@ -520,6 +537,7 @@ const restaurants = [
       sunday: "10:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 19,
@@ -549,6 +567,7 @@ const restaurants = [
       sunday: "11:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 20,
@@ -578,6 +597,7 @@ const restaurants = [
       sunday: "12:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 21,
@@ -607,6 +627,7 @@ const restaurants = [
       sunday: "11:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 22,
@@ -636,6 +657,7 @@ const restaurants = [
       sunday: "11:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 23,
@@ -665,6 +687,7 @@ const restaurants = [
       sunday: "11:00-22:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: true,
   },
   {
     id: 24,
@@ -694,6 +717,7 @@ const restaurants = [
       sunday: "11:30-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 25,
@@ -723,6 +747,7 @@ const restaurants = [
       sunday: "10:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
   {
     id: 26,
@@ -752,6 +777,7 @@ const restaurants = [
       sunday: "12:00-21:00",
     },
     delivery: [15, 25, 30, 40, 55],
+    specialOffer: false,
   },
 ];
 

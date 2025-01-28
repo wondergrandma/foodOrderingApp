@@ -16,7 +16,7 @@ function ReviewAndComplete({
   return (
     <div>
       <h1 className={styles.stepTitle}>Step 3: Review & Complete Order</h1>
-      
+
       <h3 className={styles.subTitle}>Delivery Address</h3>
       <p>
         {deliveryAddress
@@ -43,9 +43,9 @@ function ReviewAndComplete({
         onClick={handlePay}
         disabled={isProcessing || showThanks}
         style={{
-          border: showThanks || isProcessing ? "2px solid #f06406" : "",
-          backgroundColor: showThanks || isProcessing ? "#e5d9c5" : "#f06406",
-          color: showThanks || isProcessing ? "#f06406" : "white",
+          border: showThanks || isProcessing ? "2px solid #FA812F" : "",
+          backgroundColor: showThanks || isProcessing ? "#e5d9c5" : "#FA812F",
+          color: showThanks || isProcessing ? "#FA812F" : "white",
           cursor: showThanks || isProcessing ? "not-allowed" : "pointer",
         }}
       >
