@@ -2,6 +2,7 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import PaymentPage from "./pages/PaymentPage";
 import RestaurantPage from "./pages/RestaurantPage";
+import UserProfilePage from "./pages/UserProfilePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./storage/CartProvider";
 import Footer from "./components/Footer/Footer";
@@ -24,6 +25,7 @@ function App() {
                 path="/payment"
                 element={<PaymentPage></PaymentPage>}
               ></Route>
+                <Route path="/profile" element={<UserProfilePage />} />
             </Routes>
             <Footer></Footer>
           </Router>
