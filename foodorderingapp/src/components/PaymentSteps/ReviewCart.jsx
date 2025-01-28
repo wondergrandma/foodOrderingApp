@@ -5,6 +5,9 @@ import styles from "../../pages/PaymentPage.module.css";
 // Step 1
 function ReviewCart({ cart }) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const deliveryFee = 4.5;
+  const serivceFee = cart.length / 10;
+  const totalPricewithFees = totalPrice + deliveryFee + serivceFee;
 
   const handleTotalPriceChange = (newTotal) => {
     setTotalPrice(newTotal);
@@ -20,9 +23,11 @@ function ReviewCart({ cart }) {
       ) : (
         <div>
           <FoodList onTotalPriceChange={handleTotalPriceChange} />
+          <p className={styles.feePrice}>Delivery fee: ${deliveryFee}</p>
+          <p className={styles.feePrice}>Service fee: ${serivceFee}</p>
           <div className={styles.lineHorizontal}></div>
           <p className={styles.totalPrice}>
-            Total Price: ${totalPrice.toFixed(2)}
+            Total Price: ${totalPricewithFees.toFixed(2)}
           </p>
         </div>
       )}

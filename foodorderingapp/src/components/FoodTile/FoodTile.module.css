@@ -118,3 +118,25 @@
     transform: scale(0.90); 
     box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
   }
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.floatingDiv {
+    margin-top: 73px;
+    padding-inline: 5px;
+    font-size: 12px;
+    position: absolute;
+    background-color: #FEF3E2;
+    z-index: 1000;
+  }
+
+.floatingDiv:hover{
+    background-color: #dad0c1;
+}
+
+.close{
+margin-top: 15px;
+}

@@ -195,10 +195,15 @@
 .totalPrice{
   color: #FA812F;
   font-weight: 600;
+  font-size: 20px;
 }
 
 .lineHorizontal {
   border: 1px solid rgba(0, 0, 0, 0.5);
   width: 90%;
   margin: 10px 0; 
+}
+
+.feePrice{
+font-weight: bold;
 }
