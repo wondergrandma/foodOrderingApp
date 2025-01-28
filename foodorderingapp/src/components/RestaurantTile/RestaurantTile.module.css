@@ -1,8 +1,32 @@
+.restaurantTileContainer {
+    margin: 20px;
+}
+
 .restaurantContainer{
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
     gap: 20px;
+    padding-bottom: 5px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #feb381 #FEF3E3;
+}
+
+
+.restaurantContainer::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.restaurantContainer::-webkit-scrollbar-thumb {
+    background-color: #feb381;
+    border-radius: 10px;
+    border: 2px solid #FEF3E3;
+}
+
+.restaurantContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #F06406;
 }
 
 .restaurant{
@@ -11,6 +35,18 @@
     background-color: white;
     border: 2px solid rgba(0, 0, 0, 0.5);
     flex-shrink: 0;
+
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: left;
+
+    cursor: pointer;
 }
 
 .top{

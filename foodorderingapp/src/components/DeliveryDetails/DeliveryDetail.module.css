@@ -1,3 +1,46 @@
-.deliveryDetailContainer{
-    background-color: #FA812F;
-}
+.deliveryDetailContainer {
+    margin: 20px 0;
+  }
+  
+  .addressForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .addressDisplay {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .input:focus {
+    border-color: #f06406;
+    outline: none;
+    box-shadow: 0 0 5px rgba(240, 100, 6, 0.5);
+  }
+  
+  .saveButton, .editButton {
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 14px;
+    background-color: #f06406;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .saveButton:hover, .editButton:hover {
+    background-color: #e45b06;
+  }
+  

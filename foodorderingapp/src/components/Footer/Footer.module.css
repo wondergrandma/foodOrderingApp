@@ -6,9 +6,10 @@
 }
 
 .footer{
+    position: fixed;
+    bottom: 0;
     height: 50px;
     width: 100%;
-    margin-right: 30px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

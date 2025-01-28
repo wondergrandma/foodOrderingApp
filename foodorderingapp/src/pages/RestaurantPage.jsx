@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import restaurants from "../data/restaurants";
 import Header from "../components/Header/Header";
 import RestaurantDetail from "../components/RestaurantDetail/RestaurantDetail";
@@ -9,6 +9,7 @@ import Footer from "../components/Footer/Footer";
 
 function RestaurantPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const restaurant = restaurants.find(
     (restaurant) => restaurant.id === Number(id)
@@ -18,15 +19,33 @@ function RestaurantPage() {
     return <div>Restaurant not found</div>;
   }
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
+  const handlePayRedirect = () => {
+    navigate("/payment");
+  };
+
   return (
     <>
-      <Header></Header>
+      <Header />
       <div className={styles.restaurantPageContainer}>
-        <FoodList></FoodList>
-        <FoodTile menu={restaurant.menu}></FoodTile>
-        <RestaurantDetail restaurant={restaurant}></RestaurantDetail>
+        <div className={styles.backArrowContainer}>
+          <button className={styles.backArrow} onClick={handleBack}>
+            &#8592; Back
+          </button>
+        </div>
+        <div className={styles.foodListSection}>
+          <FoodList />
+          <button className={`${styles.payButton}`} onClick={handlePayRedirect}>
+            Go to Cart
+          </button>
+        </div>
+        <FoodTile menu={restaurant.menu} />
+        <RestaurantDetail restaurant={restaurant} />
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
