@@ -87,6 +87,8 @@
   z-index: 1;
   pointer-events: none;
   background-blend-mode: normal;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .overlay {

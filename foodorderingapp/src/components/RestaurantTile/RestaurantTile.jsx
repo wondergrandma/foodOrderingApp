@@ -127,7 +127,11 @@ function RestaurantTile() {
         {filterHighRatedRestaurants(restaurants).map((restaurant) => (
           <div
             key={restaurant.id}
-            onClick={() => goToRestaurant(restaurant.id)}
+            onClick={
+              isRestaurantOpen(restaurant)
+                ? () => goToRestaurant(restaurant.id)
+                : null
+            }
             className={`${styles.restaurant} ${
               !isRestaurantOpen(restaurant) ? styles.bars : ""
             }`}
@@ -150,7 +154,11 @@ function RestaurantTile() {
           (restaurant) => (
             <div
               key={restaurant.id}
-              onClick={() => goToRestaurant(restaurant.id)}
+              onClick={
+                isRestaurantOpen(restaurant)
+                  ? () => goToRestaurant(restaurant.id)
+                  : null
+              }
               className={`${styles.restaurant} ${
                 !isRestaurantOpen(restaurant) ? styles.bars : ""
               }`}
