@@ -108,6 +108,10 @@
     width: 100%;
     box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
   }
+
+  .saveButton:hover{
+    background-color: #df732b;
+  }
   
   .cancelButton {
     background-color: transparent;
@@ -125,4 +129,5 @@
   
   .cancelButton:hover {
     color: #FA812F;
+    background-color:#f3e9d9 ;
   }

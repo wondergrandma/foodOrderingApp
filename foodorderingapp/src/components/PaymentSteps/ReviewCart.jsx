@@ -14,7 +14,7 @@ function ReviewCart({ cart }) {
   };
 
   return (
-    <div>
+    <div className={styles.background}>
       <h1 className={styles.stepTitle}>Step 1: Review Your Cart</h1>
       {cart.length === 0 ? (
         <p className={styles.errorMessage}>

@@ -14,7 +14,7 @@ function ReviewAndComplete({
   const finalOrderList = orderSummary.length > 0 ? orderSummary : cart;
 
   return (
-    <div>
+    <div className={styles.background}>
       <h1 className={styles.stepTitle}>Step 3: Review & Complete Order</h1>
 
       <h3 className={styles.subTitle}>Delivery Address</h3>
@@ -25,7 +25,14 @@ function ReviewAndComplete({
       </p>
 
       <h3 className={styles.subTitle}>Delivery Time</h3>
-      <p>{deliveryTime || "No time selected."}</p>
+      <p>
+        {deliveryTime
+          ? new Date(deliveryTime).toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+            })
+          : "No time selected."}
+      </p>
 
       <h3 className={styles.subTitle}>Your Order</h3>
       <ul>

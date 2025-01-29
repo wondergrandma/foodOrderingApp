@@ -13,10 +13,10 @@ function DeliveryDetails({
   deliveryTime,
   handleDeliveryTimeChange,
   handleEarliestDelivery,
-  isTimeValid
+  isTimeValid,
 }) {
   return (
-    <div>
+    <div className={styles.background}>
       <h1 className={styles.stepTitle}>Step 2: Enter Delivery Details</h1>
 
       <DeliveryDetail
