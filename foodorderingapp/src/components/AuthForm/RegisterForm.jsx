@@ -8,7 +8,6 @@ function RegisterForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Simulate registration logic here
     setIsRegistered(true);
   };
 
