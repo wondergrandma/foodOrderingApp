@@ -17,6 +17,7 @@
     background-color: #FEF3E3;
     width: 450px;
     height: 50px;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 button {

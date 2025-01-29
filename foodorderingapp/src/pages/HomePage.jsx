@@ -11,9 +11,9 @@ function HomePage() {
   return (
     <>
       <Header></Header>
-      <div style={{ height: "120px" }}></div>
+      <div style={{ height: "130px" }}></div>
       <RestaurantTile></RestaurantTile>
-      <div style={{ height: "140px" }}></div>
+      <div style={{ height: "100px" }}></div>
 
       <DeliveryChat isOpen={isChatOpen} />
     </>

@@ -8,6 +8,7 @@
   flex-direction: column;
   background: #fa812f;
   z-index: 9999;
+  box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .chat-header {
