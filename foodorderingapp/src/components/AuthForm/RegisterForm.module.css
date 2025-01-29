@@ -1,7 +1,7 @@
 .column{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -29,4 +29,12 @@ button {
 button:hover{
     color: #FEF3E3;
 }
+
+.successMessage {
+    font-size: 20px;
+    margin-top: 120px;
+    padding-inline: 10px;
+    background-color: #FEF3E3;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
+  }
   
