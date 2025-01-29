@@ -52,6 +52,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
   }
 
   .editForm {
@@ -89,7 +90,7 @@
   
   .buttonsRow {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: flex-start;
     margin-top: 10px;
   }
@@ -105,6 +106,7 @@
     margin-top: 20px;
     transition: background-color 0.3s ease;
     width: 100%;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
   }
   
   .cancelButton {
@@ -118,6 +120,7 @@
     margin-top: 20px;
     transition: background-color 0.3s ease;
     width: 100%;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
   }
   
   .cancelButton:hover {
